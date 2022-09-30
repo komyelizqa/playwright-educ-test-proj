@@ -80,3 +80,7 @@ class App:
             self.page.reload()
         else:
             assert list_of_elements == 5
+
+    def move_mouse_up(self):
+        self.page.mouse.up()
+        self.page.wait_for_timeout(1000)

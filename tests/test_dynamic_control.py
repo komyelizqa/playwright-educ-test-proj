@@ -19,4 +19,3 @@ class TestDynamicControl:
         dynamic_control.click_on_button('Enable')
         dynamic_control.wait_loading_not_displayed()
         dynamic_control.check_element_is_enable()
-

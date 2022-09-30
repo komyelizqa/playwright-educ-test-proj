@@ -47,7 +47,3 @@ class DynamicControl:
 
     def navigate_to(self, menu: str):
         self.page.click(f"text={menu}")
-
-
-
-
