@@ -10,6 +10,8 @@ from page_object.download_file import DownloadFile
 from page_object.dynamic_control import DynamicControl
 from page_object.dynamic_loading import DynamicLoading
 from page_object.entry_ad import EntryAd
+from page_object.floating_menu import FloatingMenu
+from page_object.form_authentication import FormAuth
 from page_object.popup_alerts import PopUpAlerts
 from page_object.drug_drop import DrugDrop
 
@@ -18,6 +20,7 @@ from page_object.drug_drop import DrugDrop
 def get_playwright():
     with sync_playwright() as playwright:
         yield playwright
+
 
 
 #
@@ -102,3 +105,17 @@ def download_file(get_playwright):
     download_file = DownloadFile(get_playwright, base_url=settings.BASE_URL)
     yield download_file
     download_file.close()
+
+@fixture
+def floating_menu(get_playwright):
+    floating_menu = FloatingMenu(get_playwright, base_url=settings.BASE_URL)
+    yield floating_menu
+    floating_menu.close()
+
+@fixture
+def form_auth(get_playwright):
+    form_auth = FormAuth(get_playwright, base_url=settings.BASE_URL)
+    yield form_auth
+    form_auth.close()
+
+
