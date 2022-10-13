@@ -1,3 +1,5 @@
+from random import randint
+
 from playwright.sync_api import Playwright, expect
 
 import settings
@@ -84,3 +86,6 @@ class App:
     def move_mouse_up(self):
         self.page.mouse.up()
         self.page.wait_for_timeout(1000)
+
+    def delay(self):
+        self.page.wait_for_timeout(randint(100, 900))

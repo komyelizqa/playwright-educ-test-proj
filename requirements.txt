@@ -1,2 +1,2 @@
-playwright ==	1.25.2
+playwright==1.25.2
 pytest~=7.1.2
