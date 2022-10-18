@@ -3,7 +3,7 @@ from playwright.sync_api import Playwright, expect
 import settings
 
 
-class Iframe:
+class IFrame:
 
     def __init__(self, playwright: Playwright, base_url: str, headless=False):
         self.browser = playwright.chromium.launch(headless=headless)
@@ -27,7 +27,11 @@ class Iframe:
     def navigate_to(self, menu: str):
         self.page.click(f"text={menu}")
 
-    def navigate_to_frame(self):
-        pass
-
-
+    # noinspection PyTypeChecker
+    def navigate_to_frame(self, i_frame_locator: str):
+        self.page.wait_for_timeout(1000)
+        iframe_locator = self.page.frame(i_frame_locator)
+        print(type(iframe_locator))
+        expect(self.page.frame(i_frame_locator)).to_be_visible()
+        # locator = self.page.frame(i_frame).get_by_text(i_frame_text)
+        # expect(locator).to_be_visible()

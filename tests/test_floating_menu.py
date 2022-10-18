@@ -45,8 +45,3 @@ class TestFloatingMenu:
         floating_menu.check_link("contact")
         floating_menu.click_on_button("About")
         floating_menu.check_link("about")
-
-
-
-
-

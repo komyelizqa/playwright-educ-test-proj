@@ -10,3 +10,8 @@ MIDDLE_PAGE_FLOATING = "//*[@id='content']/div/div[2]/div/p[4]"
 BUTTON_IN_FOOTER_ES = '//*[@id="page-footer"]/div/div/a'
 LOGIN_FIELD = "login"
 ERROR_AUTH = " Your username is invalid! "
+IFRAME_LEFT = "frame-left"
+IFRAME_RIGHT = "frame-right"
+IFRAME_MIDDLE = "frame-middle"
+IFRAME_BUTTON = "frame-button"
+

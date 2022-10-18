@@ -12,6 +12,7 @@ from page_object.dynamic_loading import DynamicLoading
 from page_object.entry_ad import EntryAd
 from page_object.floating_menu import FloatingMenu
 from page_object.form_authentication import FormAuth
+from page_object.iframe import IFrame
 from page_object.popup_alerts import PopUpAlerts
 from page_object.drug_drop import DrugDrop
 
@@ -117,5 +118,11 @@ def form_auth(get_playwright):
     form_auth = FormAuth(get_playwright, base_url=settings.BASE_URL)
     yield form_auth
     form_auth.close()
+
+@fixture
+def iframe(get_playwright):
+    iframe = IFrame(get_playwright, base_url = settings.BASE_URL)
+    yield iframe
+    iframe.close()
 
 
