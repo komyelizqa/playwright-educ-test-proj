@@ -27,11 +27,12 @@ class IFrame:
     def navigate_to(self, menu: str):
         self.page.click(f"text={menu}")
 
-    # noinspection PyTypeChecker
-    def navigate_to_frame(self, i_frame_locator: str):
+    def check_frame(self, i_frame_locator: str, iframe_text: str):
         self.page.wait_for_timeout(1000)
         iframe_locator = self.page.frame(i_frame_locator)
-        print(type(iframe_locator))
-        expect(self.page.frame(i_frame_locator)).to_be_visible()
-        # locator = self.page.frame(i_frame).get_by_text(i_frame_text)
-        # expect(locator).to_be_visible()
+
+        body = iframe_locator.wait_for_selector("body")
+        visible = body.is_visible()
+        text = body.inner_text()
+
+        assert visible and iframe_text in text

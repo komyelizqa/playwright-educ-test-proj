@@ -13,5 +13,5 @@ ERROR_AUTH = " Your username is invalid! "
 IFRAME_LEFT = "frame-left"
 IFRAME_RIGHT = "frame-right"
 IFRAME_MIDDLE = "frame-middle"
-IFRAME_BUTTON = "frame-button"
-
+IFRAME_BOTTOM = "frame-bottom"
+IFRAME_TEXT = "An iFrame containing the TinyMCE WYSIWYG Editor"
