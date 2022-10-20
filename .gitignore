@@ -1,0 +1,9 @@
+/.pytest_cache/
+/.idea/
+__pycache__/
+
+# virtualenv
+.venv
+venv/
+venv
+/virtual_env_second/
