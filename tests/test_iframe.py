@@ -17,3 +17,8 @@ class TestIFrames:
         iframe.check_text_exist("Frames")
         iframe.click_on_button("iFrame")
         iframe.check_text_exist(settings.IFRAME_TEXT)
+        iframe.check_frame_field()
+        iframe.click_on_button("p")
+        iframe.clear_field()
+        iframe.input_frame_field()
+

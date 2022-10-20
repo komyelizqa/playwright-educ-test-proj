@@ -36,3 +36,27 @@ class IFrame:
         text = body.inner_text()
 
         assert visible and iframe_text in text
+
+    def check_frame_field(self):
+        self.page.wait_for_timeout(1000)
+        iframe_text = 'Your content goes here.'
+        iframe_locator = self.page.frame('mce_0_ifr')
+
+        iframe_field = iframe_locator.wait_for_selector("p")
+        visible = iframe_field.is_visible()
+        text = iframe_field.inner_text()
+
+        assert visible and iframe_text in text
+
+    def clear_field(self):
+        self.page.keyboard.press('Backspace')
+
+    def input_frame_field(self):
+        self.page.wait_for_timeout(1000)
+        iframe_text = 'London is a capital of GrateBritain'
+        iframe_locator = self.page.frame('mce_0_ifr')
+
+        iframe_field = iframe_locator.wait_for_selector("p")
+        iframe_field.fill(iframe_text)
+        text = iframe_field.inner_text()
+        assert iframe_text in text
